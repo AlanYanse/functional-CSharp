@@ -118,8 +118,35 @@ class Program
 ```
 
 
+## Action
+```C#
+
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+   	
+		
+		Action <string> saludo = (name)=>Console.WriteLine("Hola " + name);
+
+		saludo("Alan");
 
 
+
+		
+    }
+
+	
+
+}
+
+//output
+
+// Hola Alan
+
+```
 
 
 
