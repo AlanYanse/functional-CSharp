@@ -47,18 +47,33 @@ Console.WriteLine(exist);
 ## Map (Select)
 
 ```C#
-List <int> listaNumeros = new List <int> {1,2,3,4};
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-List <int> squareNumeros = new List <int> (listaNumeros.Select(p=>p*p));
+class Program
+{
+	public static void Main(string[] args)
+	{
+		
+      	List <int> listaNumeros = new List <int> {1,2,3,4};
 
-squareNumeros.ForEach(p=>Console.WriteLine(p));
+        List <int> squareNumeros = new List <int> (listaNumeros.Select(p=>p*p));
 
-//output
+        squareNumeros.ForEach(p=>Console.WriteLine(p));
 
-//1
-//4
-//9
-//16
+        //output
+
+        //1
+        //4
+        //9
+        //16	
+		
+	
+	}
+	
+	
+}
 ```
 
 ## LINQ
