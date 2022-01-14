@@ -30,6 +30,24 @@ int[] intArray = new int[] {2, 3, 4};
 Array.ForEach(intArray, p=>Console.WriteLine(p));
 ```
 
+
+## LINQ
+```C#
+int[] arrayNumeros = new int[]{1,2,3,4,5,6,7,8,9,10};
+
+List <int> numerosPares = new List <int>(from numero in arrayNumeros where numero % 2 == 0 select numero);
+
+numerosPares.ForEach(p=>Console.WriteLine(p));
+
+//output
+
+//2
+//4
+//6
+//8
+//10
+```
+
 ## Any
 
 ```C#
@@ -44,6 +62,7 @@ Console.WriteLine(exist);
 
 //true
 ```
+
 ## Map (Select)
 
 ```C#
@@ -76,22 +95,41 @@ class Program
 }
 ```
 
-## LINQ
+## Filter (Where)
+
 ```C#
-int[] arrayNumeros = new int[]{1,2,3,4,5,6,7,8,9,10};
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-List <int> numerosPares = new List <int>(from numero in arrayNumeros where numero % 2 == 0 select numero);
+class Program
+{
+	public static void Main(string[] args)
+	{
+		
+      		int[] intArray = new int [10]{0,1,2,3,4,5,6,7,8,9};
 
-numerosPares.ForEach(p=>Console.WriteLine(p));
 
-//output
+        	int[] pares = intArray.Where(p=>p%2==0).ToArray();
 
-//2
-//4
-//6
-//8
-//10
+
+        	Array.ForEach(pares,p=>Console.WriteLine(p));
+
+        //output
+
+        //0
+        //2
+        //4
+        //6
+	//8
+		
+	
+	}
+	
+	
+}
 ```
+
 ## OnHandleCreated (Click)
 ```C#
 bt1.Click+=(s,e)=>{label1.Text = "i´m clicking";};
